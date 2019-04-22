@@ -35,6 +35,7 @@ describe 'form' do
   end
 
   it 'shows a new form that submits content and redirects and prints out params' do
+    @author = Author.find_or_create_by(name: "Stephen")
     @post = Post.create(title: "My Post", description: "My post desc")
 
     visit edit_post_path(@post)
